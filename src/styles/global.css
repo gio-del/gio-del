@@ -10,7 +10,6 @@
 }
 
 html {
-  /*background-color: #f1f5f9;*/
   background-color: var(--blue);
   color: var(--white);
   font-family: "Roboto", sans-serif;
@@ -19,10 +18,10 @@ html {
 body {
   margin: 0 auto;
   width: 100%;
-  max-width: 80ch;
+  max-width: 100ch;
   padding: 1rem;
   line-height: 1.5;
-  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -45,13 +44,12 @@ h1 {
 .hamburger {
   padding-right: 20px;
   cursor: pointer;
-  width: fit-content;
 }
 
 .hamburger .line {
   display: block;
   width: 40px;
-  height: 5px;
+  height: 2.5px;
   margin-bottom: 10px;
   background-color: var(--gold);
   transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
@@ -89,12 +87,12 @@ a:focus {
 }
 
 .hamburger.expanded .line:nth-child(1) {
-  transform: translate(10px, 10px);
+  transform: translate(7.5px, 10px);
   rotate: 45deg;
-  -webkit-transform: translate(10px, 10px);
-  -moz-transform: translate(10px, 10px);
-  -ms-transform: translate(10px, 10px);
-  -o-transform: translate(10px, 10px);
+  -webkit-transform: translate(7.5px, 10px);
+  -moz-transform: translate(7.5px, 10px);
+  -ms-transform: translate(7.5px, 10px);
+  -o-transform: translate(7.5px, 10px);
 }
 
 .hamburger.expanded .line:nth-child(2) {
@@ -102,12 +100,12 @@ a:focus {
 }
 
 .hamburger.expanded .line:nth-child(3) {
-  transform: translate(10px, -10px);
+  transform: translate(7.5px, -10px);
   rotate: -45deg;
-  -webkit-transform: translate(10px, -10px);
-  -moz-transform: translate(10px, -10px);
-  -ms-transform: translate(10px, -10px);
-  -o-transform: translate(10px, -10px);
+  -webkit-transform: translate(7.5px, -10px);
+  -moz-transform: translate(7.5px, -10px);
+  -ms-transform: translate(7.5px, -10px);
+  -o-transform: translate(7.5px, -10px);
 }
 
 @media screen and (min-width: 636px) {
