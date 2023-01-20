@@ -5,20 +5,21 @@ const pageTitle = "About Me";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h2>... and my new Astro site!</h2>
+  <h2>Giovanni De Lucia</h2>
   <div class="intro">
-    <div class="img-container">
-      <img
-        class="photo"
-        src="https://images.unsplash.com/photo-1605559911160-a3d95d213904?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=711&q=80"
-      />
-    </div>
+    <img
+      class="photo"
+      src="https://images.unsplash.com/photo-1605559911160-a3d95d213904?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=711&q=80"
+    />
 
     <p>
-      I am working through Astro's introductory tutorial. This is the second
-      page on my website, and it's the first one I built myself! This site will
-      update as I complete more of the tutorial, so keep checking back and see
-      how my journey is going!
+      I am a MSc Computer Science and Engineering student at Politecnico di
+      Milano. My passions are technology, music and sport. In what interests me,
+      I always want to learn something new. I am interested in web and mobile
+      development, and system design. My learning goals are based on improving
+      my skills in languages and frameworks that I already know but I also
+      intend to learn new things, such as a backend framework (Spring or
+      Flusk/Django) and part of the AWS suite.
     </p>
   </div>
   <div class="skill">
@@ -133,10 +134,19 @@ const pageTitle = "About Me";
       </div>
     </div>
   </div>
+  <script>
+    import "../scripts/about.js";
+  </script>
 </BaseLayout>
 
 <style>
+  .skill-icons.visible {
+    opacity: 1;
+  }
   .skill-icons {
+    margin: 50px 0px;
+    opacity: 0;
+    transition: opacity 1s ease-out;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 20px;
@@ -153,14 +163,9 @@ const pageTitle = "About Me";
     filter: drop-shadow(1px 1px 2.5px var(--yellow));
   }
 
-  .img-container {
-    display: flex;
-    widows: 100%;
-    align-items: center;
-    justify-content: center;
-  }
   .photo {
-    margin: 0px auto;
+    display: block;
+    margin: 0 auto;
     height: 250px;
     transition: all 2.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
@@ -175,7 +180,7 @@ const pageTitle = "About Me";
   }
 
   p:hover {
-    text-shadow: 0 0 10px var(--gold);
+    text-shadow: 0 0 1px var(--gold);
   }
 
   @media screen and (min-width: 636px) {
@@ -189,11 +194,10 @@ const pageTitle = "About Me";
     }
     p {
       font-size: 1.5rem;
-      padding: 0px 50px;
+      padding: 0px 0px 0px 25px;
     }
-
     .photo {
-      width: 100%;
+      width: 300px;
       height: 100%;
     }
   }

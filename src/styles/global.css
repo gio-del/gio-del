@@ -13,6 +13,7 @@ html {
   background-color: var(--blue);
   color: var(--white);
   font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
