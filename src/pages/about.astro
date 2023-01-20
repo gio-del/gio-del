@@ -24,35 +24,45 @@ const pageTitle = "About Me";
   <div class="skill">
     <h2>Programming Languages</h2>
     <div class="skill-icons">
-      <div class="icon py">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" />
-      </div>
       <div class="icon c">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/1200px-C_Programming_Language.svg.png"
+          alt="c icon"
         />
       </div>
       <div class="icon java">
-        <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" />
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/226/226777.png"
+          alt="Java icon"
+        />
+      </div>
+      <div class="icon py">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
+          alt="python icon"
+        />
       </div>
       <div class="icon js">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" />
-      </div>
-      <div class="icon css">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968242.png" />
-      </div>
-      <div class="icon html">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png" />
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
+          alt="JavaScript icon"
+        />
       </div>
     </div>
     <h2>Backend Frameworks</h2>
     <div class="skill-icons">
       <div class="icon node">
-        <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" />
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/919/919825.png"
+          alt="node.js icon"
+        />
       </div>
 
       <div class="icon express">
-        <img src="https://expressjs.com/images/express-facebook-share.png" />
+        <img
+          src="https://expressjs.com/images/express-facebook-share.png"
+          alt="express.js icon"
+        />
       </div>
     </div>
 
@@ -61,28 +71,64 @@ const pageTitle = "About Me";
       <div class="icon react">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/800px-React-icon.svg.png"
+          alt="react icon"
         />
       </div>
       <div class="icon vite">
-        <img src="https://vitejs.dev/logo-with-shadow.png" />
+        <img src="https://vitejs.dev/logo-with-shadow.png" alt="vite.js icon" />
       </div>
       <div class="icon astro">
-        <img src="https://astro.build/assets/press/full-logo-light.svg" />
-      </div>
-
-      <div class="icon junit">
         <img
-          src="https://miro.medium.com/max/982/1*AiTBjfsoj3emarTpaeNgKQ.png"
-        />
-      </div>
-      <div class="icon jest">
-        <img
-          src="https://miro.medium.com/max/300/1*veOyRtKTPeoqC_VlWNUc5Q.png"
+          src="https://astro.build/assets/press/full-logo-light.svg"
+          alt="Astro icon"
         />
       </div>
       <div class="icon tailwindcss">
         <img
           src="https://anf.al/assets/blog-images/2021-03-06-tailwindcss-review-by-a-backend-developer/tailwindcss.png"
+          alt="tailwindcss icon"
+        />
+      </div>
+    </div>
+    <h2>Testing Libraries</h2>
+    <div class="skill-icons">
+      <div class="icon junit">
+        <img
+          src="https://miro.medium.com/max/982/1*AiTBjfsoj3emarTpaeNgKQ.png"
+          alt="Junit5 icon"
+        />
+      </div>
+      <div class="icon jest">
+        <img
+          src="https://miro.medium.com/max/300/1*veOyRtKTPeoqC_VlWNUc5Q.png"
+          alt="Jest icon"
+        />
+      </div>
+    </div>
+    <h2>DevOps</h2>
+    <div class="skill-icons">
+      <div class="icon git">
+        <img
+          src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
+          alt="Git icon"
+        />
+      </div>
+      <div class="icon github">
+        <img
+          src="https://seeklogo.com/images/G/github-logo-5F384D0265-seeklogo.com.png"
+          alt="Github icon"
+        />
+      </div>
+      <div class="icon docker">
+        <img
+          src="https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png"
+          alt="Docker icon"
+        />
+      </div>
+      <div class="icon digitalocean">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/DigitalOcean_logo.svg/1200px-DigitalOcean_logo.svg.png"
+          alt="DigitalOcean icon"
         />
       </div>
     </div>
@@ -92,17 +138,19 @@ const pageTitle = "About Me";
 <style>
   .skill-icons {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
     align-items: center;
   }
 
   .icon img {
     padding: 0 15px;
     width: 100%;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 
   .icon img:hover {
-    filter: drop-shadow(5px 5px 10px var(--black));
+    filter: drop-shadow(1px 1px 2.5px var(--yellow));
   }
 
   .img-container {
@@ -131,6 +179,10 @@ const pageTitle = "About Me";
   }
 
   @media screen and (min-width: 636px) {
+    .skill-icons {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
     .intro {
       display: flex;
       align-items: center;

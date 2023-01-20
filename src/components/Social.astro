@@ -1,14 +1,26 @@
 ---
 const { platform, username } = Astro.props;
-import github from '../assets/github.svg'
-import linkedin from '../assets/linkedin.svg'
+import github from "../assets/github.svg";
+import linkedin from "../assets/linkedin.svg";
+
+const socialIcon = {
+  github,
+  linkedin,
+};
 ---
 
-<a href={`https://www.${platform}.com/${username}`}
-  >{platform}</a
->
+<a href={`https://www.${platform}.com/${username}`}>
+  <img src={socialIcon[platform]} />
+</a>
 
 <style>
+  img {
+    width: 30px;
+    transition: all 1.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  a:hover img {
+    rotate: 360deg;
+  }
   a:hover {
     background-color: var(--yellow);
   }
@@ -16,5 +28,7 @@ import linkedin from '../assets/linkedin.svg'
     padding: 0.5rem 1rem;
     color: white !important;
     background-color: var(--gold);
+    display: flex;
+    align-items: center;
   }
 </style>
