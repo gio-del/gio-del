@@ -1,8 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
-:root {
-  --white: rgba(255, 255, 255, 0.696);
-  --black: rgb(0, 8, 20);
+html {
+  --white: rgba(14, 13, 13, 0.75);
+  --lightBlack: rgb(255, 214, 10);
+  --blue: rgba(255, 214, 10, 0.02);
+  --gold: rgb(0, 29, 61);
+  --yellow: rgb(0, 53, 102);
+}
+
+html.dark {
+  --white: rgba(255, 255, 255, 0.884);
   --lightBlack: rgb(0, 29, 61);
   --blue: rgb(0, 53, 102);
   --gold: rgb(255, 195, 0);

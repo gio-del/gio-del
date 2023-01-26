@@ -1,0 +1,30 @@
+---
+const { project } = Astro.props;
+import github from "../assets/github.svg";
+---
+
+<a href={project.url}>
+  <li>
+    {project.frontmatter.title}
+    <p>{project.frontmatter.tags.map((tag) => <span>#{tag}</span>)}</p>
+  </li>
+</a>
+
+<style>
+  li {
+    border: solid 1px black;
+    padding: 5px;
+    transition: all 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+  }
+
+  li:hover {
+    background: var(--lightBlack);
+  }
+  p {
+    padding: 0;
+  }
+
+  span {
+    margin-right: 5px;
+  }
+</style>

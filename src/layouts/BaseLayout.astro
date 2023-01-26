@@ -14,7 +14,19 @@ const { pageTitle } = Astro.props;
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Gioanni De Lucia - {pageTitle}</title>
+    <title>Giovanni De Lucia - {pageTitle}</title>
+    <script>
+      if (
+        //avoids FOUC
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
   </head>
   <body>
     <Header />

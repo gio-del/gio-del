@@ -1,11 +1,21 @@
 ---
 import Navigation from "./Navigation.astro";
 import Hamburger from "./Hamburger.astro";
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <header>
   <nav>
     <Hamburger />
     <Navigation />
+    <ThemeToggle />
   </nav>
 </header>
+
+<style>
+  nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+</style>

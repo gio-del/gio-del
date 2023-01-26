@@ -3,7 +3,7 @@ layout: ../../layouts/ProjectLayout.astro
 title: 'Graph Ranker'
 pubDate: 2023-01-13
 github: 'https://github.com/gio-del/Progetto-API-2020-21'
-tags: ["c", "data structures and algorithms"]
+tags: ["c", "data-structures-and-algorithms"]
 ---
 The project aims to maintain a ranking of weighted directed graphs, where the ranking keeps track of the k "best" graphs. The program takes in two parameters, the number of nodes in the graphs (n) and the length of the ranking (k), followed by a series of commands. These commands include:
 - **AddGraph [adjacency matrix]**: This command adds a new graph to be considered for the ranking. The adjacency matrix of the graph is provided,with elements separated by commas and one row per line. The nodes in the graph are assumed to be labeled with integers between 0 and n-1, and the node in position 0 corresponds to the first row of the matrix. The edges in the graph have integer weights in the range [0, 2^32-1].
