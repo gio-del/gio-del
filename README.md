@@ -33,8 +33,4 @@ Here are some ideas to get you started:
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-![ActivityGraphs](https://github-readme-activity-graph.cyclic.app/graph?username=gio-del&theme=minimal)
-![Contributions](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=gio-del&theme=vue)
-![HitCounter](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgio-del1212%2Fhit-counter)
-![Streak](https://github-readme-streak-stats.herokuapp.com/?user=gio-del&theme=dark)
-![MostUsed](https://github-readme-stats.vercel.app/api/top-langs/?username=gio-del&theme=dark)
+

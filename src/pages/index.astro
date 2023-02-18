@@ -1,9 +1,204 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const pageTitle = "Home Page";
+const pageTitle = "About Me";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h2>Something</h2>
+  <h2>Giovanni De Lucia</h2>
+  <div class="intro">
+    <img
+      class="photo"
+      src="https://images.unsplash.com/photo-1605559911160-a3d95d213904?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=711&q=80"
+    />
+
+    <p>
+      I am a MSc Computer Science and Engineering student at Politecnico di
+      Milano. My passions are technology, music and sport. In what interests me,
+      I always want to learn something new. I am interested in web and mobile
+      development, and system design. My learning goals are based on improving
+      my skills in languages and frameworks that I already know but I also
+      intend to learn new things, such as a backend framework (Spring or
+      Flusk/Django) and part of the AWS suite.
+    </p>
+  </div>
+  <div class="skill">
+    <h2>Programming Languages</h2>
+    <div class="skill-icons">
+      <div class="icon c">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/1200px-C_Programming_Language.svg.png"
+          alt="c icon"
+        />
+      </div>
+      <div class="icon java">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/226/226777.png"
+          alt="Java icon"
+        />
+      </div>
+      <div class="icon py">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
+          alt="python icon"
+        />
+      </div>
+      <div class="icon js">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
+          alt="JavaScript icon"
+        />
+      </div>
+    </div>
+    <h2>Backend Frameworks</h2>
+    <div class="skill-icons">
+      <div class="icon node">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/919/919825.png"
+          alt="node.js icon"
+        />
+      </div>
+
+      <div class="icon express">
+        <img
+          src="https://expressjs.com/images/express-facebook-share.png"
+          alt="express.js icon"
+        />
+      </div>
+    </div>
+
+    <h2>Frontend Frameworks</h2>
+    <div class="skill-icons">
+      <div class="icon react">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/800px-React-icon.svg.png"
+          alt="react icon"
+        />
+      </div>
+      <div class="icon vite">
+        <img src="https://vitejs.dev/logo-with-shadow.png" alt="vite.js icon" />
+      </div>
+      <div class="icon astro">
+        <img
+          src="https://astro.build/assets/press/full-logo-light.svg"
+          alt="Astro icon"
+        />
+      </div>
+      <div class="icon tailwindcss">
+        <img
+          src="https://anf.al/assets/blog-images/2021-03-06-tailwindcss-review-by-a-backend-developer/tailwindcss.png"
+          alt="tailwindcss icon"
+        />
+      </div>
+    </div>
+    <h2>Testing Libraries</h2>
+    <div class="skill-icons">
+      <div class="icon junit">
+        <img
+          src="https://miro.medium.com/max/982/1*AiTBjfsoj3emarTpaeNgKQ.png"
+          alt="Junit5 icon"
+        />
+      </div>
+      <div class="icon jest">
+        <img
+          src="https://miro.medium.com/max/300/1*veOyRtKTPeoqC_VlWNUc5Q.png"
+          alt="Jest icon"
+        />
+      </div>
+    </div>
+    <h2>DevOps</h2>
+    <div class="skill-icons">
+      <div class="icon git">
+        <img
+          src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
+          alt="Git icon"
+        />
+      </div>
+      <div class="icon github">
+        <img
+          src="https://seeklogo.com/images/G/github-logo-5F384D0265-seeklogo.com.png"
+          alt="Github icon"
+        />
+      </div>
+      <div class="icon docker">
+        <img
+          src="https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png"
+          alt="Docker icon"
+        />
+      </div>
+      <div class="icon digitalocean">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/DigitalOcean_logo.svg/1200px-DigitalOcean_logo.svg.png"
+          alt="DigitalOcean icon"
+        />
+      </div>
+    </div>
+  </div>
+  <script>
+    import "../scripts/about.js";
+  </script>
 </BaseLayout>
+
+<style>
+  .skill-icons.visible {
+    opacity: 1;
+  }
+  .skill-icons {
+    margin: 50px 0px;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+    align-items: center;
+  }
+
+  .icon img {
+    padding: 0 15px;
+    width: 100%;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .icon img:hover {
+    filter: drop-shadow(1px 1px 2.5px var(--yellow));
+  }
+
+  .photo {
+    display: block;
+    margin: 0 auto;
+    height: 250px;
+    transition: all 2.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .photo:hover {
+    filter: hue-rotate(20deg);
+  }
+
+  p {
+    font-size: 1rem;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  p:hover {
+    text-shadow: 0 0 1px var(--gold);
+  }
+
+  @media screen and (min-width: 636px) {
+    .skill-icons {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .intro {
+      display: flex;
+      align-items: center;
+    }
+    p {
+      font-size: 1.5rem;
+      padding: 0px 0px 0px 25px;
+    }
+    .photo {
+      width: 300px;
+      height: 100%;
+    }
+  }
+</style>
