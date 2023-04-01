@@ -3,28 +3,74 @@ const { project } = Astro.props;
 import github from "../assets/github.svg";
 ---
 
+<!-- Card for project -->
 <a href={project.url}>
-  <li>
-    {project.frontmatter.title}
-    <p>{project.frontmatter.tags.map((tag) => <span>#{tag}</span>)}</p>
+  <li class="card">
+    <div class="details">
+      <p class="title">{project.frontmatter.title}</p>
+      <div class="secondary">
+        <p class="description">{project.frontmatter.description}</p>
+        <ul class="tags">
+          {project.frontmatter.tags.map((tag) => <li>#{tag}</li>)}
+        </ul>
+      </div>
+    </div>
+    <img class="photo" src={project.frontmatter.photo} />
   </li>
 </a>
 
 <style>
-  li {
+  li.card {
+    display: flex;
     border: solid 1px black;
     padding: 5px;
     transition: all 1s cubic-bezier(0.39, 0.575, 0.565, 1);
   }
 
-  li:hover {
+  li.card:hover {
     background: var(--lightBlack);
   }
-  p {
-    padding: 0;
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
   }
 
-  span {
+  ul.tags {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    color: var(--white);
+    margin-top: 5px;
+  }
+
+  ul.tags li {
     margin-right: 5px;
+    background: var(--black);
+    padding: 2px 5px;
+    border-radius: 5px;
+    border: 1px solid var(--white);
+    font: 15px "Roboto Mono", monospace;
+  }
+
+  .description {
+    color: var(--white);
+    padding: 5px 0;
+    margin: 0;
+  }
+
+  .title {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  .photo {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    max-height: 250px;
+    object-fit: cover;
   }
 </style>
