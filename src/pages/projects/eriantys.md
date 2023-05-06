@@ -5,7 +5,7 @@ pubDate: 2023-01-13
 description: 'A digital Java version of the board game Eriantys'
 github: 'https://github.com/gio-del/ingsw2022-AM23'
 tags: ["java", "socket", "javaFX"]
-photo: '../src/assets/projects/eriantys.jpg'
+photo: '/assets/projects/eriantys.jpg'
 ---
 The purpose of this project was to build a digital version of the board game, [Eriantys](https://craniointernational.com/products/eriantys/) using Java. The implementation follows the Model-View-Controller (MVC) pattern and only uses Java technologies. For the user interface, we used javafx and for the network communication, we used sockets.
 

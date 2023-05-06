@@ -4,6 +4,6 @@ title: 'This Portfolio Site'
 pubDate: 2023-01-13
 github: 'https://github.com/gio-del/gio-del'
 tags: ["astro", "portfolio"]
-photo: '../src/assets/projects/emall.png'
+photo: '/assets/projects/emall.png'
 ---
 Well, this site is the first iteration of my portfolio in Astro.
