@@ -3,18 +3,27 @@ import Social from "./Social.astro";
 ---
 
 <footer>
-  <p>You can reach me at:</p>
-  <Social platform="github" link="https://www.github.com/gio-del" />
-  <Social
-    platform="linkedin"
-    link="https://www.linkedin.com/in/giovannidelucia"
-  />
+  <p>
+    You can reach me at:
+    <Social platform="github" link="https://www.github.com/gio-del" />
+    <Social
+      platform="linkedin"
+      link="https://www.linkedin.com/in/giovannidelucia"
+    />
+    <Social platform="mail" link="mailto:giovanni.delucia@polimi.it" />
+  </p>
+
+  <p class="ack">Icons by <a href="https://icons8.com/">icons8</a></p>
 </footer>
 
 <style>
   footer {
-    display: flex;
     gap: 1rem;
     margin-top: 2rem;
+  }
+
+  .ack {
+    opacity: 0.8;
+    font-size: 0.9rem;
   }
 </style>

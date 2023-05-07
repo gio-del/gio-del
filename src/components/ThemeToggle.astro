@@ -22,8 +22,13 @@
     width: fit-content;
   }
   .sun {
-    fill: black;
+    fill: var(--secondary);
   }
+
+  #themeToggle:hover .sun {
+    fill: var(--tertiary);
+  }
+
   .moon {
     fill: transparent;
   }
@@ -32,7 +37,15 @@
     fill: transparent;
   }
   :global(.dark) .moon {
-    fill: white;
+    fill: var(--secondary);
+  }
+
+  :global(.dark) #themeToggle:hover .sun {
+    fill: transparent;
+  }
+
+  :global(.dark) #themeToggle:hover .moon {
+    fill: var(--tertiary);
   }
 </style>
 

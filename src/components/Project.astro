@@ -1,75 +1,168 @@
 ---
-const { project } = Astro.props;
+const { project } = Astro.props; // project object contains: frontmatter.title, frontmatter.description, frontmatter.tags, frontmatter.photo, url, frontmatter.github
 ---
 
-<!-- Card for project -->
-<a href={project.url}>
-  <li class="card">
-    <div class="details">
-      <p class="title">{project.frontmatter.title}</p>
-      <div class="secondary">
-        <p class="description">{project.frontmatter.description}</p>
-        <ul class="tags">
-          {project.frontmatter.tags.map((tag) => <li>#{tag}</li>)}
-        </ul>
+<!-- Card for project with photo, url, title, description, list of tags, there is NO Card component, pure HTML and CSS in style directives -->
+<div class="project">
+  <div class="project_content">
+    <div class="project_title">
+      <a href={project.url}>
+        {project.frontmatter.title}
+      </a>
+      <!-- description and link to github if present -->
+      <div class="project_description">
+        {project.frontmatter.description}
+        {
+          project.frontmatter.github && (
+            <a href={project.frontmatter.github} target="_blank">
+              <i class="fa-brands fa-github" />
+            </a>
+          )
+        }
       </div>
     </div>
-    <img class="photo" src={project.frontmatter.photo} />
-  </li>
-</a>
+    <div class="project_photo">
+      <a href={project.url}>
+        <img src={project.frontmatter.photo} alt={project.frontmatter.title} />
+      </a>
+    </div>
+  </div>
+  <div class="project_tags">
+    {
+      project.frontmatter.tags.map((tag) => (
+        <div class="project_tag">#{tag}</div>
+      ))
+    }
+  </div>
+</div>
 
 <style>
-  li.card {
+  .project {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    background-color: var(--primary);
+    color: var(--secondary);
+    font-size: 1rem;
+    font-weight: normal;
+    box-shadow: 0 0 0.5rem var(--secondary);
+  }
+
+  .project_content {
     display: flex;
-    border: solid 1px black;
-    padding: 5px;
-    transition: all 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  li.card:hover {
-    background: var(--lightBlack);
+  .project_title {
+    font-size: 1.7rem;
+    font-weight: bold;
   }
 
-  .details {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
+  .project_description {
+    color: var(--tertiary);
+    font-size: 1.2rem;
+    font-weight: normal;
   }
 
-  ul.tags {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    color: var(--white);
-    margin-top: 5px;
+  .project_photo {
+    width: 100px;
+    height: 100px;
+    margin-left: 1rem;
   }
 
-  ul.tags li {
-    margin-right: 5px;
-    background: var(--black);
-    padding: 2px 5px;
-    border-radius: 5px;
-    border: 1px solid var(--white);
-    font: 15px "Roboto Mono", monospace;
-  }
-
-  .description {
-    color: var(--white);
-    padding: 5px 0;
-    margin: 0;
-  }
-
-  .title {
-    margin: 0;
-    font-size: 20px;
-  }
-
-  .photo {
-    flex: 1;
+  .project_photo img {
     width: 100%;
     height: 100%;
-    max-width: 250px;
-    max-height: 250px;
     object-fit: cover;
+  }
+
+  i {
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    color: var(--tertiary);
+  }
+
+  i:hover {
+    color: var(--secondary);
+  }
+
+  .project_tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .project_tag {
+    margin-right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    color: var(--secondary);
+    font-size: 1rem;
+    font-weight: normal;
+  }
+
+  .project_tag:last-child {
+    margin-right: 0;
+  }
+
+  .project_tag:hover {
+    cursor: default;
+    color: var(--tertiary);
+  }
+
+  .project_tag div:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .project_content {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .project_photo {
+      width: 100%;
+      height: auto;
+      margin-left: 0;
+      margin-bottom: 1rem;
+    }
+
+    .project_tags {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .project_title {
+      font-size: 1.25rem;
+    }
+
+    .project_description {
+      font-size: 0.75rem;
+    }
+
+    .project_tag {
+      font-size: 0.5rem;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .project_title {
+      font-size: 1rem;
+    }
+
+    .project_description {
+      font-size: 0.5rem;
+    }
+
+    .project_tag {
+      font-size: 0.25rem;
+    }
   }
 </style>
