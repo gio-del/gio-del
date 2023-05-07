@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 html {
-  --primary: #6e6e6e;
-  --secondary: #baff39;
-  --tertiary: #ffffff;
+  --primary: #f6f6f6;
+  --secondary: #69a100;
+  --tertiary: #1a1a1a;
 }
 
 html.dark {
-  --primary: #6e6e6e;
+  --primary: #1a1a1a;
   --secondary: #baff39;
-  --tertiary: #ffffff;
+  --tertiary: #f6f6f6;
 }
 
 html {

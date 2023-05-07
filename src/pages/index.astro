@@ -117,8 +117,8 @@ const pageTitle = "About Me";
     }
 
     .skill-icons img:hover {
-      transform: scale(1.1);
-      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 3px var(--tertiary));
     }
 
     .skill-icons {
@@ -128,6 +128,65 @@ const pageTitle = "About Me";
 
     .visible {
       opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+      .skill-icons img {
+        width: 100px;
+      }
+      .photo {
+        width: 150px;
+        height: 150px;
+      }
+
+      .description h1 {
+        font-size: 1.5rem;
+      }
+      .description p {
+        font-size: 1rem;
+      }
+      .skill h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .skill-icons img {
+        width: 80px;
+      }
+      .photo {
+        width: 100px;
+        height: 100px;
+      }
+
+      .description h1 {
+        font-size: 1rem;
+      }
+      .description p {
+        font-size: 0.8rem;
+      }
+      .skill h2 {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 300px) {
+      .skill-icons img {
+        width: 60px;
+      }
+      .photo {
+        width: 80px;
+        height: 80px;
+      }
+      .description h1 {
+        font-size: 0.8rem;
+      }
+      .description p {
+        font-size: 0.6rem;
+      }
+      .skill h2 {
+        font-size: 0.8rem;
+      }
     }
   </style>
 </BaseLayout>
