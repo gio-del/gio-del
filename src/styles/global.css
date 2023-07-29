@@ -43,6 +43,40 @@ h1 {
   color: var(--secondary);
 }
 
+h2 {
+  margin: 1rem 0;
+  font-size: 2rem;
+  color: var(--secondary);
+}
+
+h3 {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  color: var(--secondary);
+}
+
+h4 {
+  margin: 1rem 0;
+  font-size: 1.25rem;
+  color: var(--secondary);
+}
+
+h5 {
+  margin: 1rem 0;
+  font-size: 1rem;
+  color: var(--secondary);
+}
+
+h6 {
+  margin: 1rem 0;
+  font-size: 0.875rem;
+  color: var(--secondary);
+}
+
+strong {
+  font-weight: 600;
+}
+
 /* navbar styles */
 
 .hamburger {

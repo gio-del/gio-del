@@ -1,11 +1,12 @@
 ---
+priority: 99
 layout: ../../layouts/ProjectLayout.astro
 title: 'Graph Ranker'
 pubDate: 2023-01-13
 description: 'A program that maintains a ranking of weighted directed graphs'
 github: 'https://github.com/gio-del/Progetto-API-2020-21'
 tags: ["c", "data-structures-and-algorithms"]
-photo: '/assets/projects/emall.png'
+photo: '/assets/projects/algo.png'
 ---
 The project aims to maintain a ranking of weighted directed graphs, where the ranking keeps track of the k "best" graphs. The program takes in two parameters, the number of nodes in the graphs (n) and the length of the ranking (k), followed by a series of commands. These commands include:
 

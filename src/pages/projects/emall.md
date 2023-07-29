@@ -1,4 +1,5 @@
 ---
+priority: 1
 layout: ../../layouts/ProjectLayout.astro
 title: 'eMall: electric Mobility for All!'
 pubDate: 2023-01-13

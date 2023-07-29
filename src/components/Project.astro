@@ -1,15 +1,13 @@
 ---
-const { project } = Astro.props; // project object contains: frontmatter.title, frontmatter.description, frontmatter.tags, frontmatter.photo, url, frontmatter.github
+const { project } = Astro.props;
 ---
 
-<!-- Card for project with photo, url, title, description, list of tags, there is NO Card component, pure HTML and CSS in style directives -->
 <div class="project">
   <div class="project_content">
     <div class="project_title">
       <a href={project.url}>
         {project.frontmatter.title}
       </a>
-      <!-- description and link to github if present -->
       <div class="project_description">
         {project.frontmatter.description}
         {
@@ -20,12 +18,18 @@ const { project } = Astro.props; // project object contains: frontmatter.title, 
           )
         }
       </div>
-    </div>
-    <div class="project_photo">
-      <a href={project.url}>
-        <img src={project.frontmatter.photo} alt={project.frontmatter.title} />
-      </a>
-    </div>
+    </div>{
+      project.frontmatter.photo && (
+        <div class="project_photo">
+          <a href={project.url}>
+            <img
+              src={project.frontmatter.photo}
+              alt={project.frontmatter.title}
+            />
+          </a>
+        </div>
+      )
+    }
   </div>
   <div class="project_tags">
     {
@@ -48,16 +52,26 @@ const { project } = Astro.props; // project object contains: frontmatter.title, 
     box-shadow: 0 0 0.5rem var(--secondary);
   }
 
+  .project:last-child {
+    margin-bottom: 0;
+  }
+
+  .project:hover {
+    box-shadow: 0 0 1rem var(--tertiary);
+  }
+
   .project_content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
   }
 
   .project_title {
     font-size: 1.7rem;
     font-weight: bold;
+    width: 50%;
   }
 
   .project_description {
@@ -67,9 +81,12 @@ const { project } = Astro.props; // project object contains: frontmatter.title, 
   }
 
   .project_photo {
-    width: 100px;
-    height: 100px;
-    margin-left: 1rem;
+    display: flex;
+    width: 250px;
+    height: 450px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
   }
 
   .project_photo img {
@@ -91,8 +108,8 @@ const { project } = Astro.props; // project object contains: frontmatter.title, 
   .project_tags {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   .project_tag {
@@ -129,6 +146,7 @@ const { project } = Astro.props; // project object contains: frontmatter.title, 
     }
 
     .project_title {
+      width: 100%;
       font-size: 1.5rem;
     }
 
@@ -138,7 +156,7 @@ const { project } = Astro.props; // project object contains: frontmatter.title, 
 
     .project_photo {
       width: 100%;
-      height: 200px;
+      height: 300px;
       margin: 1rem 0;
     }
 
@@ -173,9 +191,12 @@ const { project } = Astro.props; // project object contains: frontmatter.title, 
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
+      height: 100%;
+      width: 100%;
     }
 
     .project_title {
+      width: 100%;
       font-size: 1.5rem;
     }
 
@@ -185,14 +206,14 @@ const { project } = Astro.props; // project object contains: frontmatter.title, 
 
     .project_photo {
       width: 100%;
-      height: 200px;
+      height: 100%;
       margin: 1rem 0;
     }
 
     .project_photo img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
 
     .project_tags {
@@ -223,6 +244,7 @@ const { project } = Astro.props; // project object contains: frontmatter.title, 
     }
 
     .project_title {
+      width: 100%;
       font-size: 1.5rem;
     }
 
