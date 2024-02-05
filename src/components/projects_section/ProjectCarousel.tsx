@@ -4,16 +4,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ProjectCard from "./ProjectCard";
+import { info } from "../../data/info";
 
 // Interface for the props
 interface ProjectCarouselProps {
-  projects: {
-    title: string;
-    date: string;
-    description: string;
-    link: string;
-    tech: string[];
-  }[];
+  projects: (typeof info)["projects"];
 }
 
 function CustomArrow(props: any) {

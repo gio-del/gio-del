@@ -2,14 +2,10 @@
 // A project has a title, description, date, and a list of technologies used
 // Use tailwind for styling
 
+import { info } from "../../data/info";
+
 interface ProjectCardProps {
-  project: {
-    title: string;
-    description: string;
-    date: string;
-    link: string;
-    tech: string[];
-  };
+  project: (typeof info)["projects"][number];
 }
 
 export default function ProjectCard(props: ProjectCardProps) {

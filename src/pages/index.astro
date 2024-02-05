@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { info } from "../data/info";
 import ProjectCarousel from "../components/projects_section/ProjectCarousel";
 import Contact from "../components/contact_section/Contact";
+import About from "../components/about_section/About";
 
 // This is the home page, it will contain three sections that on large screens will be full height (whole screen)
 // These sections will be: the hero (my name, title, brief description and a picture), the projects section (carousel scrolling through my projects) and the contact section (a form to send me an email, with a message and a subject field, and a button to send the email)
@@ -21,6 +22,11 @@ import Contact from "../components/contact_section/Contact";
           >
         </h1>
         <h2 class="text-2xl font-semibold">{info.brief_description}</h2>
+        <h2 class="text-2xl font-semibold">
+          Based in <span class="text-accent dark:text-dk-accent"
+            >{info.location}</span
+          >
+        </h2>
       </div>
       <img
         class="lg:h-96 lg:w-96 h-40 w-40 rounded-full object-cover object-center space-x-8"
@@ -31,12 +37,7 @@ import Contact from "../components/contact_section/Contact";
   </section>
 
   <section class="lg:h-screen lg:m-0 my-20 mx-2" id="about">
-    <div class="flex flex-row justify-center items-center h-full space-y-4">
-      <div class="flex flex-col space-y-4 w-full lg:w-1/2 mx-4">
-        <h1 class="text-4xl font-bold">About me</h1>
-        <p class="text-2xl font-semibold">{info.about.description}</p>
-      </div>
-    </div>
+    <About about={info.about} client:only />
   </section>
 
   <section

@@ -1,15 +1,7 @@
-// Very easy contact section
-// Just a row of links with icons and links to email, github, linkedin, and twitter
-// Use fontawesome for icons (no react-fontawesome but <i> tags)
-// Style the stuff with tailwind in a nice way, icon should be visible and clickable
+import { info } from "../../data/info";
 
 interface ContactProps {
-  contact: {
-    email: string;
-    github: string;
-    linkedin: string;
-    twitter: string;
-  };
+  contact: (typeof info)["contact"];
 }
 
 export default function Contact(props: ContactProps) {
