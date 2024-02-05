@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { info } from "../data/info";
 import ProjectCarousel from "../components/projects_section/ProjectCarousel";
+import Contact from "../components/contact_section/Contact";
 
 // This is the home page, it will contain three sections that on large screens will be full height (whole screen)
 // These sections will be: the hero (my name, title, brief description and a picture), the projects section (carousel scrolling through my projects) and the contact section (a form to send me an email, with a message and a subject field, and a button to send the email)
@@ -14,7 +15,11 @@ import ProjectCarousel from "../components/projects_section/ProjectCarousel";
   <section class="lg:h-screen lg:m-0 my-20 mx-2" id="home">
     <div class="flex flex-row justify-center items-center h-full space-y-4">
       <div class="flex flex-col lg:mx-8">
-        <h1 class="text-4xl font-bold">Hi, I'm {info.name}</h1>
+        <h1 class="text-4xl font-bold">
+          Hi, I'm <span class="text-accent dark:text-dk-accent">
+            {info.name}</span
+          >
+        </h1>
         <h2 class="text-2xl font-semibold">{info.brief_description}</h2>
       </div>
       <img
@@ -43,15 +48,7 @@ import ProjectCarousel from "../components/projects_section/ProjectCarousel";
 
   <section class="lg:h-screen lg:m-0 my-20 mx-2" id="contact">
     <div class="flex flex-row justify-center items-center h-full space-y-4">
-      <div class="flex flex-col space-y-4">
-        <h1 class="text-4xl font-bold">Hi, I'm {info.name}</h1>
-        <h2 class="text-2xl font-semibold">{info.brief_description}</h2>
-      </div>
-      <img
-        class="lg:h-96 lg:w-96 h-48 w-48 rounded-full object-cover object-center"
-        src={info.picture}
-        alt="A picture of me"
-      />
+      <Contact contact={info.contact} client:only />
     </div>
   </section>
 </BaseLayout>

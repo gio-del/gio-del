@@ -23,7 +23,7 @@ export default function DarkModeUtility() {
     <button className="self-center" onClick={handleThemeMode}>
       <span className="dark:hidden">
         <svg
-          className="scale-[0.8] fill-secondary"
+          className="fill-secondary hover:fill-accent stroke-2"
           xmlns="http://www.w3.org/2000/svg"
           height="40"
           width="40"
@@ -33,7 +33,7 @@ export default function DarkModeUtility() {
       </span>
       <span className="hidden dark:inline">
         <svg
-          className="scale-[0.8] fill-dk-secondary"
+          className="fill-dk-secondary hover:fill-dk-accent stroke-2"
           xmlns="http://www.w3.org/2000/svg"
           height="40"
           width="40"

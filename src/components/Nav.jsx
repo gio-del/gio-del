@@ -24,10 +24,12 @@ export default function NavBar() {
         </a>
         <div className="inline-flex lg:hidden">
           <button
-            className="flex items-center justify-center px-3 py-2 border rounded text-secondary dark:text-dk-secondary border-secondary dark:border-dk-secondary appearance-none focus:outline-none"
+            className="flex items-center justify-center px-3 py-2 border-2 rounded text-secondary dark:text-dk-secondary border-secondary dark:border-dk-secondary appearance-none focus:outline-none"
             onClick={() => setIsNavOpen(!isNavOpen)}
           >
             <svg
+              strokeWidth={2}
+              style={{ stroke: "currentColor" }}
               className={isNavOpen ? "hidden" : "" + " fill-current h-4 w-4"}
               viewBox="0 0 45 45"
               xmlns="http://www.w3.org/2000/svg"
@@ -36,6 +38,8 @@ export default function NavBar() {
               <path d="M6 36v-3h36v3Zm0-10.5v-3h36v3ZM6 15v-3h36v3Z" />
             </svg>
             <svg
+              strokeWidth={2}
+              style={{ stroke: "currentColor" }}
               className={!isNavOpen ? "hidden" : "" + " fill-current h-4 w-4"}
               viewBox="0 0 45 45"
               xmlns="http://www.w3.org/2000/svg"
@@ -46,17 +50,17 @@ export default function NavBar() {
           </button>
         </div>
         <div className="hidden lg:block">
-          <ul className="inline-flex text-secondary dark:text-dk-secondary text-lg">
-            <li className="p-4">
+          <ul className="inline-flex text-secondary dark:text-dk-secondary text-2xl font-normal">
+            <li className="p-4 hover:text-accent dark:hover:text-dk-accent">
               <a href="/#home">Home</a>
             </li>
-            <li className="p-4">
+            <li className="p-4 hover:text-accent dark:hover:text-dk-accent">
               <a href="/#about">About</a>
             </li>
-            <li className="p-4">
+            <li className="p-4 hover:text-accent dark:hover:text-dk-accent">
               <a href="/#projects">Projects</a>
             </li>
-            <li className="p-4">
+            <li className="p-4 hover:text-accent dark:hover:text-dk-accent">
               <a href="/#contact">Contact</a>
             </li>
             <li className="px-4 flex">
@@ -73,7 +77,7 @@ export default function NavBar() {
               "h-full flex flex-col items-center text-center lg:hidden dark:text-tertiary"
         }
       >
-        <ul className="w-full text-secondary dark:text-dk-secondary">
+        <ul className="w-full text-secondary dark:text-dk-secondary text-xl font-semibold">
           <li className="p-4">
             <a href="/#home">Home</a>
           </li>
