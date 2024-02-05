@@ -6,7 +6,6 @@ export const info = {
     "I'm a full stack developer with a passion for web development.",
   picture: "/pic.jpg",
   location: "New York, USA",
-  email: "john.doe@fake.com",
 
   about: {
     description: `I'm a full stack developer with a passion for web development.
@@ -16,11 +15,31 @@ export const info = {
     I'm a team player and I'm always looking for ways to improve my skills.`,
   },
 
-  social: {
-    linkedin: "https://www.linkedin.com/in/johndoe",
-    github: "https://www.github.com/johndoe",
-    twitter: "https://www.twitter.com/johndoe",
-  },
+  projects: [
+    {
+      title: "Portfolio Website",
+      date: "2021",
+      description:
+        "A personal portfolio website built with Next.js and TypeScript.",
+      link: "https://www.github.com",
+      tech: ["Next.js", "TypeScript"],
+    },
+    {
+      title: "E-commerce Website",
+      date: "2020",
+      description:
+        "An e-commerce website built with React, Node.js, and MongoDB.",
+      link: "https://www.github.com",
+      tech: ["React", "Node.js", "MongoDB"],
+    },
+    {
+      title: "Blog Website",
+      date: "2019",
+      description: "A blog website built with Gatsby and GraphQL.",
+      link: "https://www.github.com",
+      tech: ["Gatsby", "GraphQL"],
+    },
+  ],
 
   education: [
     {
@@ -63,4 +82,11 @@ export const info = {
   ],
 
   skills: ["JavaScript", "TypeScript"],
+
+  contact: {
+    email: "john.doe@fake.com",
+    linkedin: "https://www.linkedin.com/in/johndoe",
+    github: "https://www.github.com/johndoe",
+    twitter: "https://www.twitter.com/johndoe",
+  },
 };
