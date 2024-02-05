@@ -39,6 +39,20 @@ export const info = {
       link: "https://www.github.com",
       tech: ["Gatsby", "GraphQL"],
     },
+    {
+      title: "Social Media App",
+      date: "2018",
+      description: "A social media app built with React and Redux.",
+      link: "https://www.github.com",
+      tech: ["React", "Redux"],
+    },
+    {
+      title: "Todo App",
+      date: "2017",
+      description: "A todo app built with Angular and Firebase.",
+      link: "https://www.github.com",
+      tech: ["Angular", "Firebase"],
+    },
   ],
 
   education: [
