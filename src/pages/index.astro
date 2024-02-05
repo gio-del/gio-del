@@ -1,192 +1,75 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { info } from "../data/info";
 
-const pageTitle = "About Me";
+// This is the home page, it will contain three sections that on large screens will be full height (whole screen)
+// These sections will be: the hero (my name, title, brief description and a picture), the projects section (carousel scrolling through my projects) and the contact section (a form to send me an email, with a message and a subject field, and a button to send the email)
+// We use tailwindcss for styling, react for the interactivity and astro for the static site generation
+// When you have to define a new React Component just put there the name of the component and the props it will receive, I will implement it later
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <div class="about">
-    {
-      false && (
-        <div class="photo">
-          <img
-            src="https://avatars.githubusercontent.com/u/91754361?v=4"
-            alt="My photo"
-          />
-        </div>
-      )
-    }
-    <div class="description">
-      <h1>Hi, I'm Giovanni</h1>
-      <p>
-        I am a MSc Computer Science and Engineering student at Politecnico di
-        Milano. My passions are technology, music and sport. In what interests
-        me, I always want to learn something new. I am interested in web and
-        mobile development, and system design. My learning goals are based on
-        improving my skills in languages and frameworks that I already know but
-        I also intend to learn new things, such as a backend framework (Spring
-        or Flusk/Django) and part of the AWS suite.
-      </p>
+<BaseLayout title="Home">
+  <!-- First Section, Hero -->
+  <section class="lg:h-screen lg:m-0 my-20 mx-2">
+    <div
+      id="home"
+      class="flex flex-row justify-center items-center h-full space-y-4"
+    >
+      <div class="flex flex-col lg:mx-8">
+        <h1 class="text-4xl font-bold">Hi, I'm {info.name}</h1>
+        <h2 class="text-2xl font-semibold">{info.brief_description}</h2>
+      </div>
+      <img
+        class="lg:h-96 lg:w-96 h-40 w-40 rounded-full object-cover object-center space-x-8"
+        src={info.picture}
+        alt="A picture of me"
+      />
     </div>
-  </div>
-  <div class="skill">
-    <h2>Programming Languages</h2>
-    <div class="skill-icons">
-      <img src="/assets/icons/c.svg" alt="C" />
-      <img src="/assets/icons/java.svg" alt="Java" />
-      <img src="/assets/icons/python.svg" alt="Python" />
-      <img src="/assets/icons/javascript.svg" alt="Javascript" />
+  </section>
+
+  <section class="lg:h-screen lg:m-0 my-20 mx-2">
+    <div
+      id="about"
+      class="flex flex-row justify-center items-center h-full space-y-4"
+    >
+      <div class="flex flex-col space-y-4 w-full lg:w-1/2 mx-4">
+        <h1 class="text-4xl font-bold">About me</h1>
+        <p class="text-2xl font-semibold">{info.about.description}</p>
+      </div>
     </div>
+  </section>
 
-    <h2>Frontend Frameworks/Libraries</h2>
-    <div class="skill-icons">
-      <img src="/assets/icons/react.svg" alt="React" />
-      <img src="/assets/icons/tailwindcss.svg" alt="Tailwind" />
+  <section class="lg:h-screen lg:m-0 my-20 mx-2">
+    <div
+      id="projects"
+      class="flex flex-row justify-center items-center h-full space-y-4"
+    >
+      <div class="flex flex-col space-y-4">
+        <h1 class="text-4xl font-bold">Hi, I'm {info.name}</h1>
+        <h2 class="text-2xl font-semibold">{info.brief_description}</h2>
+      </div>
+      <img
+        class="lg:h-96 lg:w-96 h-48 w-48 rounded-full object-cover object-center"
+        src={info.picture}
+        alt="A picture of me"
+      />
     </div>
+  </section>
 
-    <h2>Backend</h2>
-    <div class="skill-icons">
-      <img src="/assets/icons/nodejs.svg" alt="Node" />
-      <img src="/assets/icons/expressjs.svg" alt="Express" />
+  <section class="lg:h-screen lg:m-0 my-20 mx-2">
+    <div
+      id="contact"
+      class="flex flex-row justify-center items-center h-full space-y-4"
+    >
+      <div class="flex flex-col space-y-4">
+        <h1 class="text-4xl font-bold">Hi, I'm {info.name}</h1>
+        <h2 class="text-2xl font-semibold">{info.brief_description}</h2>
+      </div>
+      <img
+        class="lg:h-96 lg:w-96 h-48 w-48 rounded-full object-cover object-center"
+        src={info.picture}
+        alt="A picture of me"
+      />
     </div>
-
-    <h2>Databases</h2>
-    <div class="skill-icons">
-      <img src="/assets/icons/postgresql.svg" alt="PostgreSQL" />
-      <img src="/assets/icons/mysql.svg" alt="MySQL" />
-    </div>
-
-    <h2>Other</h2>
-    <div class="skill-icons">
-      <img src="/assets/icons/git.svg" alt="Git" />
-      <img src="/assets/icons/docker.svg" alt="Docker" />
-    </div>
-  </div>
-  <script>
-    import "../scripts/about.js";
-  </script>
-
-  <style>
-    .about {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 0 20px;
-      margin: 0 auto;
-      max-width: 1000px;
-    }
-
-    .photo {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      margin: 50px 0;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .description h1 {
-      font-size: 2rem;
-    }
-    .description p {
-      font-size: 1.2rem;
-    }
-
-    .skill {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: start;
-      padding: 0 20px;
-      margin: 0 auto;
-      max-width: 1000px;
-    }
-
-    .skill-icons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      margin: 20px 0;
-    }
-
-    .skill-icons img {
-      aspect-ratio: 1/1;
-      width: 150px;
-      margin: 10px;
-    }
-
-    .skill-icons img:hover {
-      transform: scale(1.2);
-      filter: drop-shadow(0 0 3px var(--tertiary));
-    }
-
-    .skill-icons {
-      opacity: 0;
-      transition: opacity 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .visible {
-      opacity: 1;
-    }
-
-    @media (max-width: 600px) {
-      .skill-icons img {
-        width: 100px;
-      }
-      .photo {
-        width: 150px;
-        height: 150px;
-      }
-
-      .description h1 {
-        font-size: 1.5rem;
-      }
-      .description p {
-        font-size: 1rem;
-      }
-      .skill h2 {
-        font-size: 1.5rem;
-      }
-    }
-
-    @media (max-width: 400px) {
-      .skill-icons img {
-        width: 80px;
-      }
-      .photo {
-        width: 100px;
-        height: 100px;
-      }
-
-      .description h1 {
-        font-size: 1rem;
-      }
-      .description p {
-        font-size: 0.8rem;
-      }
-      .skill h2 {
-        font-size: 1rem;
-      }
-    }
-
-    @media (max-width: 300px) {
-      .skill-icons img {
-        width: 60px;
-      }
-      .photo {
-        width: 80px;
-        height: 80px;
-      }
-      .description h1 {
-        font-size: 0.8rem;
-      }
-      .description p {
-        font-size: 0.6rem;
-      }
-      .skill h2 {
-        font-size: 0.8rem;
-      }
-    }
-  </style>
+  </section>
 </BaseLayout>

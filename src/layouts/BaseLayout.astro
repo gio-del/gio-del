@@ -1,32 +1,23 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import "../styles/global.css";
-const { pageTitle } = Astro.props;
+import Nav from "../components/Nav";
+import TopButton from "../components/TopButton";
+
+const { title } = Astro.props;
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="Giovanni De Lucia's personal website" />
-    <meta name="author" content="Giovanni De Lucia" />
-    <meta name="keywords" content="Giovanni De Lucia, personal website" />
-    <meta name="robots" content="index, follow" />
-    <title>Giovanni De Lucia - {pageTitle}</title>
-    <script
-      src="https://kit.fontawesome.com/951ccdfb87.js"
-      crossorigin="anonymous"
-    ></script>
-    <script is:inline>
+    <title>{title}</title>
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
       if (
-        //avoids FOUC
-        localStorage.theme === "dark" ||
+        localStorage.getItem("theme") === "dark" ||
         (!("theme" in localStorage) &&
           window.matchMedia("(prefers-color-scheme: dark)").matches)
       ) {
@@ -36,13 +27,39 @@ const { pageTitle } = Astro.props;
       }
     </script>
   </head>
-  <body>
-    <Header />
-    <h1>{pageTitle}</h1>
+  <body class="bg-primary dark:bg-dk-primary">
+    <Nav client:only />
     <slot />
-    <Footer />
-    <script>
-      import "../scripts/menu.js";
-    </script>
+    <TopButton client:only />
   </body>
 </html>
+<style is:global>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    color: theme(colors.secondary);
+  }
+
+  h2,
+  p {
+    color: theme(colors.text);
+  }
+  html.dark h1 {
+    color: theme(colors.dk-secondary);
+  }
+
+  html.dark h2,
+  html.dark p {
+    color: theme(colors.dk-text);
+  }
+</style>
