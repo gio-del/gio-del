@@ -27,7 +27,7 @@ export default function Education(props: EducationProps) {
           </div>
 
           {index !== education.length - 1 && (
-            <div className="absolute top-7 left-3 h-5/6 w-1 bg-secondary dark:bg-dk-secondary"></div>
+            <div className="absolute top-4 left-3 h-full w-1 bg-secondary dark:bg-dk-secondary"></div>
           )}
         </div>
       ))}

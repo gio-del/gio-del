@@ -14,6 +14,21 @@ export const info = {
     I'm a team player and I'm always looking for ways to improve my skills.`,
     education: [
       {
+        title: "Preschool",
+        date: "1998 - 2000",
+        location: "New York Preschool",
+      },
+      {
+        title: "Elementary School",
+        date: "2000 - 2006",
+        location: "New York Elementary School",
+      },
+      {
+        title: "High School Diploma",
+        date: "2006 - 2010",
+        location: "New York High School",
+      },
+      {
         title: "Bachelor of Computer Science",
         date: "2010 - 2014",
         location: "University of New York",
@@ -48,6 +63,19 @@ export const info = {
         location: "XYZ Company",
         description:
           "Built and maintained web applications using React and Redux.",
+      },
+      {
+        title: "Software Engineer",
+        date: "2014 - 2016",
+        location: "DEF Company",
+        description: "Worked on various projects using Java, C++, and Python.",
+      },
+      {
+        title: "Intern",
+        date: "2013 - 2014",
+        location: "GHI Company",
+        description:
+          "Assisted with various tasks and learned about software development.",
       },
     ],
 

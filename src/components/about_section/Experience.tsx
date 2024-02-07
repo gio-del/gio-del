@@ -13,7 +13,7 @@ export default function Experience(props: ExperienceProps) {
       {experience.map((exp, index) => (
         <div className="flex flex-col space-y-2 relative" key={index}>
           <div className="flex items-center space-x-2">
-            <i className="fas fa-briefcase text-2xl text-secondary dark:text-dk-secondary"></i>
+            <i className="fas fa-briefcase text-2xl text-secondary dark:text-dk-secondary z-10"></i>
             <h2 className="text-2xl font-semibold">{exp.title}</h2>
           </div>
           <div className="relative left-10">
@@ -23,7 +23,7 @@ export default function Experience(props: ExperienceProps) {
           </div>
 
           {index !== experience.length - 1 && (
-            <div className="absolute top-7 left-2.5 h-5/6 w-1 bg-secondary dark:bg-dk-secondary"></div>
+            <div className="absolute top-3 left-2.5 h-full w-1 bg-secondary dark:bg-dk-secondary"></div>
           )}
         </div>
       ))}
