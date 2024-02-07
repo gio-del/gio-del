@@ -17,13 +17,15 @@ import About from "../components/about_section/About";
     <div class="flex flex-row justify-center items-center h-full space-y-4">
       <div class="flex flex-col lg:mx-8">
         <h1 class="text-4xl font-bold">
-          Hi, I'm <span class="text-accent dark:text-dk-accent">
+          Hi, I'm <span
+            class="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-blue-500 dark:from-green-400 dark:to-blue-400"
+          >
             {info.name}</span
           >
         </h1>
         <h2 class="text-2xl font-semibold">{info.brief_description}</h2>
         <h2 class="text-2xl font-semibold">
-          Based in <span class="text-accent dark:text-dk-accent"
+          Based in <span class="text-secondary dark:text-dk-secondary"
             >{info.location}</span
           >
         </h2>
@@ -36,7 +38,7 @@ import About from "../components/about_section/About";
     </div>
   </section>
 
-  <section class="lg:h-screen lg:m-0 my-20 mx-2" id="about">
+  <section class="lg:m-0 my-20 mx-2" id="about">
     <About about={info.about} client:only />
   </section>
 

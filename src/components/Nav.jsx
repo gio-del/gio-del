@@ -14,8 +14,24 @@ export default function NavBar() {
     return initials;
   };
 
+  // Handle click outside of the navigation to close the nav if it's open
+  useEffect(() => {
+    const handleClick = (e) => {
+      if (isNavOpen) {
+        if (!e.target.closest("nav")) {
+          setIsNavOpen(false);
+        }
+      }
+    };
+
+    document.addEventListener("click", handleClick);
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  }, [isNavOpen]);
+
   return (
-    <nav className="sticky w-full top-0 inset-x-0 dark:bg-dk-primary bg-primary z-50">
+    <nav className="absolute w-full top-0 inset-x-0 dark:bg-dk-primary bg-primary z-50">
       <div className="container mx-auto px-6 py-2 flex justify-between items-center">
         <a className="font-bold text-2xl lg:text-4xl" href="/#">
           <span className="text-secondary dark:text-dk-secondary">
@@ -52,9 +68,6 @@ export default function NavBar() {
         <div className="hidden lg:block">
           <ul className="inline-flex text-secondary dark:text-dk-secondary text-2xl font-normal">
             <li className="p-4 hover:text-accent dark:hover:text-dk-accent">
-              <a href="/#home">Home</a>
-            </li>
-            <li className="p-4 hover:text-accent dark:hover:text-dk-accent">
               <a href="/#about">About</a>
             </li>
             <li className="p-4 hover:text-accent dark:hover:text-dk-accent">
@@ -77,10 +90,10 @@ export default function NavBar() {
               "h-full flex flex-col items-center text-center lg:hidden dark:text-tertiary"
         }
       >
-        <ul className="w-full text-secondary dark:text-dk-secondary text-xl font-semibold">
-          <li className="p-4">
-            <a href="/#home">Home</a>
-          </li>
+        <ul
+          className="w-full text-secondary dark:text-dk-secondary text-xl font-semibold"
+          onClick={() => setIsNavOpen(!isNavOpen)}
+        >
           <li className="p-4">
             <a href="/#about">About</a>
           </li>

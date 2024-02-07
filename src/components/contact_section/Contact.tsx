@@ -15,7 +15,7 @@ export default function Contact(props: ContactProps) {
         rel="noreferrer"
         className="text-secondary dark:text-dk-secondary"
       >
-        <i className="fas fa-envelope lg:text-8xl text-5xl hover:text-accent dark:hover:text-dk-accent"></i>
+        <i className="fas fa-envelope lg:text-9xl text-5xl hover:text-accent dark:hover:text-dk-accent"></i>
       </a>
       <a
         href={contact.github}
@@ -23,7 +23,7 @@ export default function Contact(props: ContactProps) {
         rel="noreferrer"
         className="text-secondary dark:text-dk-secondary"
       >
-        <i className="fab fa-github lg:text-8xl text-5xl hover:text-accent dark:hover:text-dk-accent"></i>
+        <i className="fab fa-github lg:text-9xl text-5xl hover:text-accent dark:hover:text-dk-accent"></i>
       </a>
       <a
         href={contact.linkedin}
@@ -31,7 +31,7 @@ export default function Contact(props: ContactProps) {
         rel="noreferrer"
         className="text-secondary dark:text-dk-secondary"
       >
-        <i className="fab fa-linkedin lg:text-8xl text-5xl hover:text-accent dark:hover:text-dk-accent"></i>
+        <i className="fab fa-linkedin lg:text-9xl text-5xl hover:text-accent dark:hover:text-dk-accent"></i>
       </a>
       <a
         href={contact.twitter}
@@ -39,7 +39,7 @@ export default function Contact(props: ContactProps) {
         rel="noreferrer"
         className="text-secondary dark:text-dk-secondary"
       >
-        <i className="fab fa-x-twitter lg:text-8xl text-5xl hover:text-accent dark:hover:text-dk-accent"></i>
+        <i className="fab fa-x-twitter lg:text-9xl text-5xl hover:text-accent dark:hover:text-dk-accent"></i>
       </a>
     </div>
   );

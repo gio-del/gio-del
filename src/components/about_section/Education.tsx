@@ -8,13 +8,15 @@ interface EducationProps {
 export default function Education(props: EducationProps) {
   const { education } = props;
 
-  return (
+  return education.length == 0 ? (
+    <div></div>
+  ) : (
     <div className="flex flex-col space-y-4 w-full lg:w-1/2 mx-4">
       <h1 className="text-3xl font-bold">Education</h1>
       {education.map((edu, index) => (
         <div className="flex flex-col space-y-2 relative" key={index}>
           <div className="flex items-center space-x-2">
-            <i className="fas fa-graduation-cap text-2xl text-secondary dark:text-dk-secondary"></i>
+            <i className="fas fa-graduation-cap text-2xl text-secondary dark:text-dk-secondary dark:hover:text-dk-accent hover:text-accent z-10"></i>
             <h2 className="text-2xl font-semibold">{edu.title}</h2>
           </div>
           <div className="relative left-10">
