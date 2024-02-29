@@ -33,14 +33,6 @@ export default function Contact(props: ContactProps) {
       >
         <i className="fab fa-linkedin lg:text-9xl text-5xl hover:text-accent dark:hover:text-dk-accent hover:animate-spin"></i>
       </a>
-      <a
-        href={contact.twitter}
-        target="_blank"
-        rel="noreferrer"
-        className="text-secondary dark:text-dk-secondary"
-      >
-        <i className="fab fa-x-twitter lg:text-9xl text-5xl hover:text-accent dark:hover:text-dk-accent hover:animate-spin"></i>
-      </a>
     </div>
   );
 }
