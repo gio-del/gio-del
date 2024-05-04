@@ -3,7 +3,7 @@
 
 - 🔭 I’m currently working on **my thesis :)**
 
-- 📫 How to reach me **giovanni.delucia@polimi.it**
+- 📫 How to reach me **giovanni.delucia@mail.polimi.it**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
