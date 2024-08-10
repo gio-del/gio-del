@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Giovanni</h1>
-<h3 align="center">A Computer Science and Engineering Student at Politecnico di Milano</h3>
+<h3 align="center">Computer Science and Engineering Student at Politecnico di Milano</h3>
 
 - 🔭 I’m currently working on **my thesis :)**
 
