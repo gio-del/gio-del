@@ -25,4 +25,6 @@
 
 #### 📫 Find me
 
+[![Website](https://img.shields.io/badge/Website-giovannidelucia.dev-2f45c6?style=flat&logo=googlechrome&logoColor=white)](https://giovannidelucia.dev)
+[![Email](https://img.shields.io/badge/Email-hello%40giovannidelucia.dev-17181c?style=flat&logo=maildotru&logoColor=white)](mailto:hello@giovannidelucia.dev)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-giovannidelucia-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/giovannidelucia)
